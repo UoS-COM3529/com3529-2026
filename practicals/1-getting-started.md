@@ -136,12 +136,31 @@ assertions on arrays and more. See:
 
 ## Testing Exceptional Behaviour
 
-JUnit provides `assertThrows` to check for exceptions being thrown by the code.
+JUnit provides `assertThrows` to check for exceptions being thrown by the code. For example, the following test is checking that the division arithmetic operator throws an exception of type `ArithmeticException.class` when the divisor is zero:
 
-Notice that the  `assertThrows` is _overloaded_, meaning multiple alternative implementations are available. For instance, you can 
-also check the exception
-message, although arguably such checks can make
-the test more _brittle_. _Can you think of why this might be the case?_
+```java
+@Test
+public void shouldThrowException() {
+    assertThrows(ArithmeticException.class, () -> {int b = 5 / 0;});
+    Exception e = assertThrows(ArithmeticException.class, () -> {int b = 5 / 0;});
+    assertEquals("/ by zero", e.getMessage());
+}
+```
+
+Notice the following:
+
+- The second argument of `assertThrows` is a _lambda expression_ (also referred to as an anonymous function), which can be any _executable_ block of code (adhering to the syntax `() -> { }`).
+- [`assertThrows`](https://docs.junit.org/5.8.0-RC1/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html#assertThrows(java.lang.Class,org.junit.jupiter.api.function.Executable)) is _overloaded_, meaning multiple alternative implementations are available. For instance, you can also check the exception message as follows:
+
+```java
+@Test
+public void shouldThrowException() {
+    Exception e = assertThrows(ArithmeticException.class, () -> {int b = 5 / 0;});
+    assertEquals("/ by zero", e.getMessage());
+}
+```
+
+Although arguably such checks can make the test more _brittle_. _Why might this be the case?_
 
 ## Tasks for Today
 
@@ -150,5 +169,5 @@ the test more _brittle_. _Can you think of why this might be the case?_
 3. Locate the implementation of the `daysBetweenTwoDates` method discussed in lectures. Its class lives in the repository:
 `code/lib/src/main/java/uk/ac/shef/com3529/Calendar.java`
 4. Where should its test class live in the Gradle organisation of the Java project?
-5. Create the class and write some JUnit tests. Reflect on which tests you think are needed and why?
-6. When thinking of tests to write, don’t forget to test for corner cases, e.g., leap years. **Have you tested _enough_?**
+5. Create the class and write some JUnit tests – try using a variety of [assertions](https://docs.junit.org/5.14.2/writing-tests/assertions.html) in your tests.
+6. When thinking of tests to write, reflect on which tests you think are needed and why, and don’t forget to test for corner cases, e.g., leap years. Ask yourself this question: _Have I tested enough?_
