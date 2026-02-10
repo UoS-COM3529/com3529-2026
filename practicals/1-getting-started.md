@@ -142,8 +142,6 @@ JUnit provides `assertThrows` to check for exceptions being thrown by the code. 
 @Test
 public void shouldThrowException() {
     assertThrows(ArithmeticException.class, () -> {int b = 5 / 0;});
-    Exception e = assertThrows(ArithmeticException.class, () -> {int b = 5 / 0;});
-    assertEquals("/ by zero", e.getMessage());
 }
 ```
 
@@ -151,16 +149,14 @@ Notice the following:
 
 - The second argument of `assertThrows` is a _lambda expression_ (also referred to as an anonymous function), which can be any _executable_ block of code (adhering to the syntax `() -> { }`).
 - [`assertThrows`](https://docs.junit.org/5.8.0-RC1/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html#assertThrows(java.lang.Class,org.junit.jupiter.api.function.Executable)) is _overloaded_, meaning multiple alternative implementations are available. For instance, you can also check the exception message as follows:
-
-```java
-@Test
-public void shouldThrowException() {
-    Exception e = assertThrows(ArithmeticException.class, () -> {int b = 5 / 0;});
-    assertEquals("/ by zero", e.getMessage());
-}
-```
-
-Although arguably such checks can make the test more _brittle_. _Why might this be the case?_
+    ```java
+    @Test
+    public void shouldThrowException() {
+        Exception e = assertThrows(ArithmeticException.class, () -> {int b = 5 / 0;});
+        assertEquals("/ by zero", e.getMessage());
+    }
+    ```
+    Although arguably such checks can make the test more _brittle_. _Why might this be the case?_
 
 ## Tasks for Today
 
