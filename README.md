@@ -58,3 +58,5 @@ COM3529 is assessed 100% by an exam, to be scheduled in the [spring exam period]
 The exam may feature questions **requiring you to write Java code**. This code
 needs to be **syntactically correct** and may involve writing JUnit tests that
 call methods in libraries studied in the module (e.g., mocking libraries).
+
+When revising for the exam, you are encouraged to consult [past exam papers](https://www.dcs.shef.ac.uk/intranet/teaching/campus/pastpapers.html).
