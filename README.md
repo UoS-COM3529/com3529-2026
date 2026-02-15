@@ -28,7 +28,7 @@ Jump to:
 
 | Week | Lecture | Practical Session |
 |-:|-|-|
-|1 | **[Introduction](slides/1-introduction.pdf)**<ul><li>Beizer's Maturity Model</li><li>Why finding all bugs is impossible</li><li>How software failures happen (the RIPR model)</li></ul>| [Getting Started](practicals/1-getting-started.md) |
+|1 | **[Introduction](slides/1-introduction.pdf)**<ul><li>Beizer's Maturity Model</li><li>Why finding all bugs is impossible</li><li>How software failures happen (the RIPR model)</li></ul>| [Getting Started](practicals/1-getting-started.md) ([Solutions](practicals/1-getting-started-solution.md)) |
 |2 | **[Testing Big and Small Part 1](slides/)**<ul><li>Test Automation</li><li>Testing Scope (The Test Triangle)</li><li>Unit Testing Part 1<ul><li>Avoiding Brittle Tests</li></ul></li></ul> | [Defects, Infections and Failures](practicals/) ([Solutions](practicals/))|
 |3 | **[Testing Big and Small Part 2](slides/)**<ul><li>Unit Testing Part 2<ul><li>Writing Clear Unit Tests</li></ul><li>Test Doubles</li></ul> | [Better Unit Testing](practicals/) ([Solutions](practicals/)) |
 |4 | **[Testing Big and Small Part 3](slides/)**<ul><li>Larger Tests</li></ul>**[Coverage Criteria, Part 1](slides/)**<ul><li>Introduction to Coverage Criteria</li></ul> | [Test Doubles](practicals/) ([Solutions](practicals/)) and [Test Coverage](practicals/) ([Solutions](practicals/))|
